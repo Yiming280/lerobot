@@ -24,7 +24,7 @@ from ..config import RobotConfig
 def lekiwi_cameras_config() -> dict[str, CameraConfig]:
     return {
         "front": OpenCVCameraConfig(
-            index_or_path="/dev/video2", fps=10, width=1280, height=720, rotation=Cv2Rotation.ROTATE_180, backend=Cv2Backends.V4L2
+            index_or_path="/dev/video2", fps=10, width=1280, height=720, backend=Cv2Backends.V4L2
         ),
         "wrist": OpenCVCameraConfig(
             index_or_path="/dev/video4", fps=10, width=720, height=1280, rotation=Cv2Rotation.ROTATE_90, backend=Cv2Backends.V4L2
