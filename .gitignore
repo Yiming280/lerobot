@@ -178,3 +178,5 @@ outputs/
 *.part
 myscripts/
 *.pt
+calibration_data/
+*.ts
