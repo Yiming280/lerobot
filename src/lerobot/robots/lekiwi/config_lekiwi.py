@@ -24,10 +24,10 @@ from ..config import RobotConfig
 def lekiwi_cameras_config() -> dict[str, CameraConfig]:
     return {
         "front": OpenCVCameraConfig(
-            index_or_path="/dev/video2", fps=10, width=1280, height=720, backend=Cv2Backends.V4L2
+            index_or_path="/dev/video3", fps=10, width=1280, height=720, backend=Cv2Backends.V4L2
         ),
         "wrist": OpenCVCameraConfig(
-            index_or_path="/dev/video4", fps=10, width=720, height=1280, rotation=Cv2Rotation.ROTATE_90, backend=Cv2Backends.V4L2
+            index_or_path="/dev/video6", fps=10, width=720, height=1280, rotation=Cv2Rotation.ROTATE_90, backend=Cv2Backends.V4L2
         ),
     }
 
@@ -35,7 +35,7 @@ def lekiwi_cameras_config() -> dict[str, CameraConfig]:
 @RobotConfig.register_subclass("lekiwi")
 @dataclass
 class LeKiwiConfig(RobotConfig):
-    port: str = "/dev/ttyACM1"  # port to connect to the bus
+    port: str = "/dev/ttyACM0"  # port to connect to the bus
 
     disable_torque_on_disconnect: bool = True
 
